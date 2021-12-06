@@ -25,14 +25,15 @@ jobs:
  
 workflows: 
   version: 2 
-  gasken: 
+  commitment: 
     jobs: 
       - build1 
       
 
   schedule:
     triggers:
-      - mbaleni:
+    parallelism: 5
+      - schedule:
           cron: "7 * * * *"
           filters:
             branches:
