@@ -1,5 +1,6 @@
 working_dir: &working_dir ~/app 
 .build_template: &script
+  parallelism: 5
   steps: 
     - checkout 
     - run: 
@@ -31,7 +32,6 @@ workflows:
       
 
   schedule:
-    parallelism: 5
     triggers:
       - schedule:
           cron: "7 * * * *"
