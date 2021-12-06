@@ -31,8 +31,8 @@ workflows:
       
 
   schedule:
-    triggers:
     parallelism: 5
+    triggers:
       - schedule:
           cron: "7 * * * *"
           filters:
